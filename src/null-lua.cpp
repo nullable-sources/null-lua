@@ -1,0 +1,1 @@
+//@note: without at least one translation unit, .lib will not be generated, you can replace .h + .cpp with a module, but at the moment they are extremely poorly supported.
