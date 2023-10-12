@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup Label="NullProperties">
+        <NullLuaRoot>$(MSBuildThisFileDirectory)</NullLuaRoot>
+        <NullLuaConfiguration Condition="'$(UseDebugLibraries)' == 'true'">debug</NullLuaConfiguration>
+        <NullLuaConfiguration Condition="'$(UseDebugLibraries)' == 'false'">release</NullLuaConfiguration>
+    </PropertyGroup>
+
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>$(NullLuaRoot)src;$(NullLuaRoot)third-party;$(NullLuaRoot)third-party\lua\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Lib>
+            <AdditionalLibraryDirectories>$(NullLuaRoot)build;$(NullLuaRoot)third-party\lua;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>null-lua-$(NullLuaConfiguration)-$(LibrariesArchitecture).lib;lua54-$(LibrariesArchitecture).lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Lib>
+        <Link>
+            <AdditionalLibraryDirectories>$(NullLuaRoot)build;$(NullLuaRoot)third-party\lua;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies>null-lua-$(NullLuaConfiguration)-$(LibrariesArchitecture).lib;lua54-$(LibrariesArchitecture).lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+</Project>
